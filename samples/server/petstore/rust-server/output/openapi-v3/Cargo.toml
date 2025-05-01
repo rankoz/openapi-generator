@@ -10,6 +10,7 @@ edition = "2018"
 [features]
 default = ["client", "server"]
 client = [
+    "serde_urlencoded",
     "serde_ignored", "regex", "percent-encoding", "lazy_static",
     "hyper", "hyper-openssl", "hyper-tls", "native-tls", "openssl", "url"
 ]
@@ -55,6 +56,7 @@ serde_ignored = {version = "0.1.1", optional = true}
 url = {version = "2.1", optional = true}
 
 # Client-specific
+serde_urlencoded = {version = "0.6.1", optional = true}
 
 # Server, and client callback-specific
 lazy_static = { version = "1.4", optional = true }
@@ -80,7 +82,7 @@ jsonwebtoken = { version = "9.3.0", optional = false }
 
 [dev-dependencies]
 clap = "2.25"
-env_logger = "0.7"
+env_logger = "0.11"
 tokio = { version = "1.14", features = ["full"] }
 native-tls = "0.2"
 
